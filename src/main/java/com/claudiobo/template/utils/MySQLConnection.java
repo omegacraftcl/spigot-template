@@ -1,14 +1,16 @@
 package com.claudiobo.template.utils;
 
-import lombok.Getter;
-import lombok.Setter;
-import net.md_5.bungee.api.ChatColor;
-
-import java.sql.*;
-import java.util.Map;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
-import com.claudiobo.template.Main;
+import com.claudiobo.prisonexec.Main;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -25,7 +27,8 @@ public class MySQLConnection {
 
     private Connection connection;
 
-    public MySQLConnection(Main main, String host, String port, String database, String username, String password, boolean useSSL) {
+    public MySQLConnection(Main main, String host, String port, String database, String username, String password,
+            boolean useSSL) {
         this.main = main;
         this.host = host;
         this.port = port;
@@ -46,7 +49,8 @@ public class MySQLConnection {
             properties.setProperty("verifyServerCertificate", "false");
             properties.setProperty("useSSL", String.valueOf(useSSL));
             properties.setProperty("requireSSL", "false");
-            setConnection(DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database, properties));
+            setConnection(DriverManager
+                    .getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database, properties));
             main.getLogger().info("Connected to database");
         } catch (Exception e) {
             main.getLogger().severe("Couldn't connect to database:");
