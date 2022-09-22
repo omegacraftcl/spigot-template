@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>PrisonRankExec</name>
-    <groupId>cl.omegacraft</groupId>
-    <artifactId>prison-rank-exec</artifactId>
+    <name>SpigotTemplate</name>
+    <groupId>com.claudiobo</groupId>
+    <artifactId>spigot-template</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
