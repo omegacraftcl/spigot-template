@@ -1,0 +1,14 @@
+autoupdater-password: 'password'
+mensajes:
+  prefijo: '&6&lTemplate &e»&r '
+mysql:
+  host: localhost
+  database: database
+  user: username
+  pass: password
+  port: 3306
+redis:
+  host: localhost
+  pass: password
+  port: 6379
+  database_number: 0

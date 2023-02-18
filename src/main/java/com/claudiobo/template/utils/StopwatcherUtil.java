@@ -5,21 +5,27 @@ public class StopwatcherUtil {
     private long start = 0L;
 
     public StopwatcherUtil() {
-        restart();
+        reset();
     }
 
     public long getMilliseconds() {
         return System.currentTimeMillis();
     }
 
-    public void restart() {
+    public void reset() {
         this.start = getMilliseconds();
     }
 
-    public String stop() {
+    public String getElapsedTime() {
         long stop = getMilliseconds();
         long diff = stop - this.start;
         return diff + "ms";
+    }
+
+    public String resetAndGetElapsedTime() {
+        String ms = getElapsedTime();
+        reset();
+        return ms;
     }
 
 }
