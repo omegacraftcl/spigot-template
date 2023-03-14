@@ -20,6 +20,8 @@ public class Main extends JavaPlugin {
     public PlaceholderHook placeholderHook;
     public AutoUpdaterTask autoUpdaterTask;
 
+    public Titles titlesNMS;
+
     @Override
     public void onEnable() {
         instance = this;
@@ -29,6 +31,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new TemplateEvents(this), this);
         getCommand("template").setExecutor(new TemplateCommand(this));
         registerAutoUpdater();
+        initializeNMS();
         if (!loadSQLDatabase()) {
             return;
         }
@@ -38,6 +41,23 @@ public class Main extends JavaPlugin {
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             placeholderHook = new PlaceholderHook(this);
             placeholderHook.register();
+        }
+    }
+
+    public void initializeNMS() {
+        String version;
+        try {
+            version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
+        } catch (ArrayIndexOutOfBoundsException whatVersionAreYouUsingException) {
+            return;
+        }
+
+        if (version.equals("v1_8_R3")) {
+            blockBreakNMS = new BlockBreak_1_8_R3();
+            titlesNMS = new Titles_1_8_R3();
+        } else if (version.equals("v1_19_R1")) {
+            blockBreakNMS = new BlockBreak_1_19_R1();
+            titlesNMS = new Titles_1_19_R1();
         }
     }
 
