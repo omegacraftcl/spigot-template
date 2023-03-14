@@ -1,4 +1,4 @@
-package com.claudiobo.banky.nms.blockbreak;
+package com.claudiobo.template.nms.blockbreak;
 
 import java.util.Random;
 import org.bukkit.Effect;

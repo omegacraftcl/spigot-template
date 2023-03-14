@@ -6,7 +6,7 @@
 
     <name>Template</name>
     <groupId>com.claudiobo</groupId>
-    <artifactId>Template</artifactId>
+    <artifactId>template</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 

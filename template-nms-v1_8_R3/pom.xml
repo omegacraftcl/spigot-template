@@ -20,14 +20,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/spigot_1.8.8.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.claudiobo</groupId>
-            <artifactId>banky-nms-common</artifactId>
+            <artifactId>template-nms-common</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

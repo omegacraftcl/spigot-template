@@ -5,6 +5,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.claudiobo.template.commands.TemplateCommand;
 import com.claudiobo.template.events.TemplateEvents;
 import com.claudiobo.template.hooks.PlaceholderHook;
+import com.claudiobo.template.nms.blockbreak.BlockBreak;
+import com.claudiobo.template.nms.blockbreak.BlockBreak_1_19_R1;
+import com.claudiobo.template.nms.blockbreak.BlockBreak_1_8_R3;
+import com.claudiobo.template.nms.title.Titles;
+import com.claudiobo.template.nms.title.Titles_1_19_R1;
+import com.claudiobo.template.nms.title.Titles_1_8_R3;
 import com.claudiobo.template.tasks.AutoUpdaterTask;
 import com.claudiobo.template.utils.Lang;
 import com.claudiobo.template.utils.MySQLConnection;
@@ -20,6 +26,7 @@ public class Main extends JavaPlugin {
     public PlaceholderHook placeholderHook;
     public AutoUpdaterTask autoUpdaterTask;
 
+    public BlockBreak blockBreakNMS;
     public Titles titlesNMS;
 
     @Override

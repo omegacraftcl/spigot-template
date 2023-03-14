@@ -1,4 +1,4 @@
-package com.claudiobo.banky.nms.title;
+package com.claudiobo.template.nms.title;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
