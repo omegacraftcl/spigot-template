@@ -17,9 +17,9 @@ public class TemplateCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage("§e/template");
-            sender.sendMessage("§e/template author");
-            sender.sendMessage("§e/template test <name>");
+            sender.sendMessage("§e/" + label);
+            sender.sendMessage("§e/" + label + " author");
+            sender.sendMessage("§e/" + label + " test <name>");
         } else {
             if (args[0].equalsIgnoreCase("author")) {
                 sender.sendMessage(Utils.color("&6&l&m----&r &e[&r&lTemplate&e] &6&l&m----"));
@@ -30,7 +30,7 @@ public class TemplateCommand implements CommandExecutor {
                 sender.sendMessage(Utils.color("&6&l&m--------------------------"));
             } else if (args[0].equalsIgnoreCase("test")) {
                 if (args.length != 2) {
-                    sender.sendMessage("§c/template test <name>");
+                    sender.sendMessage("§c/" + label + " test <name>");
                     return false;
                 }
                 String name = args[1];
