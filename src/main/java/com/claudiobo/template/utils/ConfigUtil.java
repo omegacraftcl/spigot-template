@@ -26,7 +26,7 @@ public class ConfigUtil {
         File fileConfig = new File(main.getDataFolder(), configFile + ".yml");
         if (!fileConfig.exists()) {
             try {
-                main.saveResource(configFile, false);
+                main.saveResource(configFile + ".yml", false);
             } catch (Exception e) {
                 try {
                     fileConfig.createNewFile();
